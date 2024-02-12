@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-main
+  namespace: {{ .Values.namespace.main.name }}
+spec:
+  ports:
+  - port: {{ .Values.service.main.port }}
+    targetPort: enodeapi-port
+    protocol: TCP
+  selector:
+    app: {{ .Release.Name }}-{{ .Chart.Name }}-main
+  type: {{ .Values.service.main.type }}

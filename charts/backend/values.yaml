@@ -1,0 +1,22 @@
+image:
+  books: 
+    repository: ristabel/webapi
+    tag: v1
+  main: 
+    repository: ristabel/api
+    tag: v1
+service:
+  books:
+    port: 9000
+    type: ClusterIP
+  main:
+    port: 5000
+    type: ClusterIP
+ingress:
+  host: example.com
+  path:
+    main: /api
+    books: /webapi
+namespace: 
+  main:
+    name: emart

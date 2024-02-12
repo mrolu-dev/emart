@@ -1,0 +1,25 @@
+config:
+  mongodbname: epoc
+  mongo_uri: mongodb://emongo:27017/epoc
+  mysqldbname: books
+image:
+  mongo: 
+    repository: ristabel/emongo
+    tag: v1
+  mysql: 
+    repository: ristabel/emartdb
+    tag: v1
+service:
+  mongo:
+    port: 27017
+    type: ClusterIP
+  mysql:
+    port: 3306
+    type: ClusterIP
+namespace: 
+  main:
+    name: emart
+
+
+
+    

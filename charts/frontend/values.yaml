@@ -1,0 +1,20 @@
+image:
+  client:
+    repository: ristabel/client
+    tag: v1
+service:
+  client:
+    port: 4200
+    type: ClusterIP
+ingress:
+  host: www.example.com
+  path:
+    client: /
+
+namespace: 
+  main:
+    name: emart
+
+
+
+    
